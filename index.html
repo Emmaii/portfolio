@@ -1,499 +1,293 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DATAPLUG Enterprise | B2B Data Architecture for Nigeria</title>
-  <meta name="description" content="Enterprise data architecture optimized for scale. Bulk bandwidth allocation across MTN, Airtel, Glo, and 9mobile. Dedicated B2B data pipelines for Nigerian businesses.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Silas Kelechi | Aspiring AI & Data Intern</title>
+    <meta name="description" content="Aspiring AI & Data Intern with practical experience in ML and LLM projects. Seeking internship roles to grow in real engineering environments." />
+    <meta property="og:title" content="Emmanuel Silas Kelechi | AI & Data Portfolio">
+    <meta property="og:description" content="ML Engineer & LLM Enthusiast building intelligent systems with clean, reproducible implementations.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
 
-<!-- ===== NAVIGATION ===== -->
-<nav class="navbar">
-  <div class="nav-container">
-    <!-- Logo -->
-    <div class="logo">
-      <div class="logo-icon">
-        <i class="lucide lucide-zap"></i>
-      </div>
-      <div class="logo-text">
-        <span class="logo-name">DATAPLUG</span>
-        <span class="logo-tag">Enterprise</span>
-      </div>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-subtitle">Aspiring AI & Data Intern</p>
+                    <h1 class="hero-title">
+                        <span id="typed-text">Emmanuel Silas Kelechi</span>
+                        <span class="cursor">|</span>
+                    </h1>
+                    <p class="hero-description">
+                        I build machine learning and LLM-powered systems with clean implementations and reproducible workflows. 
+                        Turning raw data into intelligent solutions.
+                    </p>
+                    <div class="hero-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lagos, Nigeria</span>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-code"></i> View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-paper-plane"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="assets/headshot.jpg" alt="Emmanuel Silas Kelechi" class="profile-img">
+                        <div class="tech-badge">
+                            <i class="fas fa-brain"></i> ML
+                        </div>
+                        <div class="tech-badge">
+                            <i class="fas fa-robot"></i> AI
+                        </div>
+                        <div class="tech-badge">
+                            <i class="fas fa-database"></i> Data
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Desktop Nav -->
-    <div class="nav-links">
-      <a href="#solutions" class="nav-link">Solutions</a>
-      <a href="#pricing" class="nav-link">Pricing</a>
-      <a href="#infrastructure" class="nav-link">Infrastructure</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%27d%20like%20to%20inquire%20about%20your%20direct%20enterprise%20data%20portals." target="_blank" class="btn-primary btn-portal">
-        <i class="lucide lucide-message-circle"></i> Direct Portal
-      </a>
-    </div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm an entry-level AI and Data enthusiast with strong practical experience building 
+                        <span class="highlight">machine-learning</span> and <span class="highlight">LLM-powered projects</span>. 
+                        I focus on clean implementations, reproducible workflows, and turning raw data into intelligent systems.
+                    </p>
+                    <p>
+                        Currently seeking <span class="highlight">internship roles</span> to grow in a real engineering environment 
+                        where I can contribute to meaningful projects and learn from experienced professionals.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Code Quality Focus</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">ML</div>
+                        <div class="stat-label">End-to-End Pipelines</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Mobile Menu Toggle -->
-    <button id="mobileMenuToggle" class="mobile-toggle" aria-label="Toggle menu">
-      <i class="lucide lucide-menu"></i>
-    </button>
-  </div>
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Practical implementations showcasing ML and LLM expertise</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-badge">Machine Learning</div>
+                        <img src="assets/churn.png" alt="Customer Churn Prediction Model" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Churn Prediction Model</h3>
+                        <p class="project-description">
+                            Built a complete end-to-end machine learning pipeline to predict customer churn. 
+                            Includes data cleaning, preprocessing, feature engineering, and model training 
+                            using scikit-learn. Tested multiple classification models with strong performance metrics.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>scikit-learn</span>
+                            <span>Streamlit</span>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Emmaii/Churn-predict"
+                               class="btn-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                          <a href="https://churn-predict1.streamlit.app/" 
+   class="btn-link" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-external-link-alt"></i> Live Demo
+</a>
+                        </div>
+                    </div>
+                </article>
 
-  <!-- Mobile Nav -->
-  <div id="mobileMenu" class="mobile-menu hidden">
-    <a href="#solutions" class="mobile-link">Solutions</a>
-    <a href="#pricing" class="mobile-link">Pricing</a>
-    <a href="#infrastructure" class="mobile-link">Infrastructure</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-    <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%27d%20like%20to%20inquire%20about%20your%20direct%20enterprise%20data%20portals." target="_blank" class="btn-primary mobile-portal-btn">
-      <i class="lucide lucide-message-circle"></i> Direct Portal
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-badge">LLM / AI</div>
+                        <img src="assets/mental.png" alt="Mental Health Chatbot" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mental Health Chatbot</h3>
+                        <p class="project-description">
+                            Developed a conversational chatbot powered by a lightweight LLM using Hugging Face Inference API.
+                            Implemented a modular system for prompts, memory, context, safety filters, and message routing.
+                            Added semantic reasoning elements to improve response quality.
+                        </p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Hugging Face</span>
+                            <span>LLMs</span>
+                            <span>Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Emmaii/mental-health-chatbot" 
+                               class="btn-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://mental-health-chatbot-6t2mjdxtgwwqq6lfxlg5h7.streamlit.app/" 
+                               class="btn-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Looking for AI/Data internship opportunities</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:emmaabusinesss@gmail.com" class="contact-link">
+                                emmaabusinesss@gmail.com
+                            </a>
+                            <p class="contact-note">Typically replies within 2 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/Emmaii" class="contact-link" target="_blank" rel="noopener noreferrer">
+                                github.com/Emmaii
+                            </a>
+                            <p class="contact-note">View all my projects and code</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p class="contact-link">Lagos, Nigeria</p>
+                            <p class="contact-note">Open to remote positions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">Building intelligent systems with clean code and data</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Emmaii" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:emmaabusinesss@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                <p class="footer-copyright">
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
     </a>
-  </div>
-</nav>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-bg-glow hero-glow-right"></div>
-  <div class="hero-bg-glow hero-glow-left"></div>
-  <div class="hero-container">
-    <div class="hero-grid">
-      <!-- Left -->
-      <div class="hero-content fade-in">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          <span class="hero-badge-text">100% NETWORK UPTIME</span>
-        </div>
-        <h1 class="hero-title">
-          Enterprise Data Architecture.
-          <span class="hero-title-gradient">Optimized for Scale.</span>
-        </h1>
-        <p class="hero-subtitle">
-          Bypass standard consumer retail limitations. We route dedicated direct corporate gifting and SME data pipelines across all major Nigerian telecommunication networks—delivering secure, high-speed connectivity to enterprises, remote workers, and power users.
-        </p>
-        <div class="hero-buttons">
-          <a href="#pricing" class="btn-primary hero-btn">
-            <i class="lucide lucide-tablet"></i> Explore Data Portals
-          </a>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20need%20a%20consultation%20on%20enterprise%20data%20solutions%20for%20my%20business." target="_blank" class="btn-secondary hero-btn">
-            <i class="lucide lucide-phone"></i> Consult with an Agent
-          </a>
-        </div>
-        <!-- Trust Indicators -->
-        <div class="hero-trust">
-          <div class="trust-item">
-            <i class="lucide lucide-check-circle trust-icon-emerald"></i>
-            <span class="trust-text">4 major carriers</span>
-          </div>
-          <div class="trust-item">
-            <i class="lucide lucide-clock trust-icon-cyan"></i>
-            <span class="trust-text">5–15s verification</span>
-          </div>
-          <div class="trust-item">
-            <i class="lucide lucide-shield-check trust-icon-emerald"></i>
-            <span class="trust-text">Enterprise SLA</span>
-          </div>
-        </div>
-      </div>
+    <!-- Success Message -->
+    <div class="toast" id="toast">Message sent successfully!</div>
 
-      <!-- Right - Hero Visual -->
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-card-icon">
-            <i class="lucide lucide-zap"></i>
-          </div>
-          <div class="hero-card-stats">
-            <div class="hero-card-stat-number">99.99%</div>
-            <div class="hero-card-stat-label">Uptime Guarantee</div>
-          </div>
-          <div class="hero-card-grid">
-            <div class="hero-card-item">
-              <div class="hero-card-item-number">2.3M+</div>
-              <div class="hero-card-item-label">Data routed daily</div>
-            </div>
-            <div class="hero-card-item">
-              <div class="hero-card-item-number">99.7%</div>
-              <div class="hero-card-item-label">Satisfaction rate</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== VALUE PROPOSITION ===== -->
-<section id="solutions" class="section-value">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Why Our Rates Are Competitive</span>
-      <h2 class="section-title">Enterprise-Grade Pricing,<br>Not Consumer Retail</h2>
-      <p class="section-subtitle">We leverage dedicated business data pools structurally discounted at an enterprise scale—passing the savings directly to you.</p>
-    </div>
-
-    <div class="value-grid">
-      <!-- 1 -->
-      <div class="value-card">
-        <div class="value-icon value-icon-cyan">
-          <i class="lucide lucide-server"></i>
-        </div>
-        <h3 class="value-title">Bulk Bandwidth Allocation</h3>
-        <p class="value-text">We leverage dedicated business data pools structurally discounted at an enterprise scale, enabling lower per-gigabyte costs.</p>
-      </div>
-
-      <!-- 2 -->
-      <div class="value-card">
-        <div class="value-icon value-icon-emerald">
-          <i class="lucide lucide-shield-check"></i>
-        </div>
-        <h3 class="value-title">Synchronous Verification</h3>
-        <p class="value-text">Secure, encrypted transaction routing that completes within 5–15 seconds—no delays, no manual intervention.</p>
-      </div>
-
-      <!-- 3 -->
-      <div class="value-card">
-        <div class="value-icon value-icon-blue">
-          <i class="lucide lucide-network"></i>
-        </div>
-        <h3 class="value-title">Network Redundancy</h3>
-        <p class="value-text">Multi-channel routing across MTN, Airtel, Glo, and 9mobile guarantees zero downtime and consistent availability.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATS BANNER ===== -->
-<section class="stats-banner">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number">4</div>
-        <div class="stat-label">Network Carriers</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">5-15s</div>
-        <div class="stat-label">Verification Time</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">99.99%</div>
-        <div class="stat-label">Uptime Guarantee</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">2.3M+</div>
-        <div class="stat-label">Data Routed Daily</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PRICING GRID ===== -->
-<section id="pricing" class="section-pricing">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag section-tag-gray">Data Portals</span>
-      <h2 class="section-title">Enterprise Bundle Grid</h2>
-      <p class="section-subtitle">Select your preferred network and plan. All orders are processed via our dedicated WhatsApp enterprise portal.</p>
-    </div>
-
-    <!-- MTN -->
-    <div class="network-group">
-      <div class="network-header">
-        <span class="network-tag tag-mtn">MTN</span>
-        <span class="network-label">Enterprise Data Bundles</span>
-      </div>
-      <div class="plan-grid">
-        <!-- MTN 2GB -->
-        <div class="plan-card">
-          <div class="plan-size">2GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦2,500</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20MTN%202GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- MTN 5GB -->
-        <div class="plan-card">
-          <div class="plan-size">5GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦5,500</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20MTN%205GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- MTN 10GB - Best Value -->
-        <div class="plan-card plan-card-highlight">
-          <div class="plan-badge">Best Value</div>
-          <div class="plan-size">10GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦9,500</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20MTN%2010GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- MTN 15GB -->
-        <div class="plan-card">
-          <div class="plan-size">15GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦13,500</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20MTN%2015GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Airtel -->
-    <div class="network-group">
-      <div class="network-header">
-        <span class="network-tag tag-airtel">AIRTEL</span>
-        <span class="network-label">Enterprise Data Bundles</span>
-      </div>
-      <div class="plan-grid">
-        <!-- Airtel 2GB -->
-        <div class="plan-card">
-          <div class="plan-size">2GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦2,300</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20AIRTEL%202GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- Airtel 5GB -->
-        <div class="plan-card">
-          <div class="plan-size">5GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦5,200</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20AIRTEL%205GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- Airtel 10GB - Best Value -->
-        <div class="plan-card plan-card-highlight">
-          <div class="plan-badge">Best Value</div>
-          <div class="plan-size">10GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦9,000</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20AIRTEL%2010GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- Airtel 15GB -->
-        <div class="plan-card">
-          <div class="plan-size">15GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦12,800</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20AIRTEL%2015GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Glo -->
-    <div class="network-group">
-      <div class="network-header">
-        <span class="network-tag tag-glo">GLO</span>
-        <span class="network-label">Enterprise Data Bundles</span>
-      </div>
-      <div class="plan-grid">
-        <!-- Glo 2GB -->
-        <div class="plan-card">
-          <div class="plan-size">2GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦2,000</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20GLO%202GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- Glo 5GB -->
-        <div class="plan-card">
-          <div class="plan-size">5GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦4,800</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20GLO%205GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- Glo 10GB - Best Value -->
-        <div class="plan-card plan-card-highlight">
-          <div class="plan-badge">Best Value</div>
-          <div class="plan-size">10GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦8,500</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20GLO%2010GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- Glo 15GB -->
-        <div class="plan-card">
-          <div class="plan-size">15GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦12,000</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%20GLO%2015GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- 9mobile -->
-    <div class="network-group">
-      <div class="network-header">
-        <span class="network-tag tag-9mobile">9MOBILE</span>
-        <span class="network-label">Enterprise Data Bundles</span>
-      </div>
-      <div class="plan-grid">
-        <!-- 9mobile 2GB -->
-        <div class="plan-card">
-          <div class="plan-size">2GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦2,200</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%209MOBILE%202GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- 9mobile 5GB -->
-        <div class="plan-card">
-          <div class="plan-size">5GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦5,000</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%209MOBILE%205GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- 9mobile 10GB - Best Value -->
-        <div class="plan-card plan-card-highlight">
-          <div class="plan-badge">Best Value</div>
-          <div class="plan-size">10GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦8,800</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%209MOBILE%2010GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-        <!-- 9mobile 15GB -->
-        <div class="plan-card">
-          <div class="plan-size">15GB</div>
-          <div class="plan-type">Data Plan</div>
-          <div class="plan-price">₦12,500</div>
-          <div class="plan-validity">30-day validity</div>
-          <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20would%20like%20to%20order%20the%209MOBILE%2015GB%20Enterprise%20Bundle%20from%20the%20website.%20Please%20provide%20payment%20details." target="_blank" class="whatsapp-btn">
-            <i class="lucide lucide-message-circle"></i> Order via WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== INFRASTRUCTURE ===== -->
-<section id="infrastructure" class="section-infrastructure">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag section-tag-cyan">Infrastructure</span>
-      <h2 class="section-title-light">Built for Enterprise Reliability</h2>
-      <p class="section-subtitle-light">Our multi-carrier routing architecture ensures consistent performance across all major Nigerian networks.</p>
-    </div>
-
-    <div class="infra-grid">
-      <div class="infra-card">
-        <div class="infra-icon">
-          <i class="lucide lucide-radio"></i>
-        </div>
-        <h3 class="infra-title">MTN</h3>
-        <p class="infra-text">Primary carrier routing</p>
-      </div>
-      <div class="infra-card">
-        <div class="infra-icon">
-          <i class="lucide lucide-wifi"></i>
-        </div>
-        <h3 class="infra-title">Airtel</h3>
-        <p class="infra-text">Secondary carrier routing</p>
-      </div>
-      <div class="infra-card">
-        <div class="infra-icon">
-          <i class="lucide lucide-satellite"></i>
-        </div>
-        <h3 class="infra-title">Glo</h3>
-        <p class="infra-text">Tertiary carrier routing</p>
-      </div>
-      <div class="infra-card">
-        <div class="infra-icon">
-          <i class="lucide lucide-signal"></i>
-        </div>
-        <h3 class="infra-title">9mobile</h3>
-        <p class="infra-text">Quaternary carrier routing</p>
-      </div>
-    </div>
-
-    <div class="infra-note">
-      <i class="lucide lucide-shield-check infra-note-icon"></i>
-      <p>All transactions are encrypted and routed through secure enterprise-grade channels.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT / CTA ===== -->
-<section id="contact" class="section-contact">
-  <div class="contact-container">
-    <div class="contact-badge">
-      <span class="contact-badge-dot"></span>
-      <span class="contact-badge-text">Direct Enterprise Support</span>
-    </div>
-    <h2 class="contact-title">Ready to Scale Your Connectivity?</h2>
-    <p class="contact-subtitle">Contact our enterprise team directly via WhatsApp for dedicated support, bulk inquiries, or custom data solutions.</p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/2348000000000?text=Hello%20DATAPLUG%20Enterprise%2C%20I%20have%20a%20bulk%20data%20inquiry%20for%20my%20business.%20Please%20provide%20details." target="_blank" class="whatsapp-btn whatsapp-btn-large">
-        <i class="lucide lucide-message-circle"></i> Chat with Enterprise Team
-      </a>
-      <a href="mailto:enterprise@dataplug.ng" class="btn-outline-dark">
-        <i class="lucide lucide-mail"></i> enterprise@dataplug.ng
-      </a>
-    </div>
-    <p class="contact-response">Response within 5–15 minutes during business hours.</p>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-top">
-      <div class="footer-logo">
-        <div class="footer-logo-icon">
-          <i class="lucide lucide-zap"></i>
-        </div>
-        <span class="footer-logo-name">DATAPLUG Enterprise</span>
-      </div>
-      <p class="footer-compliance">
-        We operate as an independent high-volume business data aggregator and enterprise bandwidth distributor. All telecom network logos and trademarks are properties of their respective registered owners.
-      </p>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© <span id="year"></span> DATAPLUG Enterprise. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<!-- ===== LUCIDE ICONS (from CDN) ===== -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
