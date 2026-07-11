@@ -1,22 +1,23 @@
-/* Premium Cyber-Luxury Structural Layout Rules */
+/* Core Styling Ruleset */
 :root {
-    --bg-main: #050507;
-    --bg-surface: #0b0b10;
-    --bg-card: #11111a;
-    --accent-glow: #3b82f6;
-    --accent-dim: #1d4ed8;
-    --border-line: #181826;
+    --bg-main: #060608;
+    --bg-surface: #0c0c12;
+    --bg-card: #12121c;
+    --accent-blue: #2563eb;
+    --accent-glow: #60a5fa;
+    --border-color: #171725;
     --text-primary: #ffffff;
-    --text-muted: #828f9f;
-    --font-header: 'Space Grotesk', sans-serif;
+    --text-muted: #8493a5;
+    --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
-    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-lens: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -28,341 +29,299 @@ body {
     font-family: var(--font-body);
     color: var(--text-primary);
     background-color: var(--bg-main);
-    line-height: 1.65;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1140px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
 
-/* Typography Base */
+/* Minimal Headings typography */
 h1, h2, h3, h4 {
-    font-family: var(--font-header);
+    font-family: var(--font-heading);
+    font-weight: 700;
     letter-spacing: -0.01em;
 }
 
-/* Luxury Modern Navigation */
-.navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: rgba(5, 5, 7, 0.75);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-line);
-    z-index: 999;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-logo {
-    font-family: var(--font-header);
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    letter-spacing: 2px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 3rem;
-}
-
-.nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: var(--transition-smooth);
-}
-
-.nav-links a:hover {
-    color: var(--text-primary);
-}
-
-.menu-toggle {
-    display: none;
-    background: none; border: none; cursor: pointer;
-}
-
-/* Hero Frame Architecture */
+/* Hero Section Styles */
 .hero {
     min-height: 100vh;
-    padding-top: 8rem;
+    padding: 4rem 0;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at 75% 25%, #10101e 0%, var(--bg-main) 60%);
+    position: relative;
 }
 
-.hero-grid {
+.hero-layout {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 0.8fr 1.2fr;
     gap: 4rem;
     align-items: center;
+    width: 100%;
 }
 
 .hero-subtitle {
-    font-family: var(--font-header);
-    color: var(--accent-glow);
+    font-family: var(--font-heading);
     font-size: 0.85rem;
+    color: var(--accent-glow);
     letter-spacing: 3px;
     margin-bottom: 0.5rem;
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.15;
     margin-bottom: 1.5rem;
 }
 
 .cursor {
-    animation: blink 0.8s infinite;
-    color: var(--accent-glow);
+    color: var(--accent-blue);
+    animation: blink 0.9s infinite;
 }
-
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 .hero-description {
     color: var(--text-muted);
     font-size: clamp(1.05rem, 2vw, 1.2rem);
-    margin-bottom: 3rem;
-    max-width: 600px;
+    margin-bottom: 2.5rem;
+    max-width: 580px;
 }
 
-.hero-cta { display: flex; gap: 1.5rem; }
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-/* The Hero Premium Camera Lens Silhouette */
+/* Camera Iris/Lens Element Layout */
 .lens-outer-ring {
-    width: 320px; height: 320px;
+    width: 280px; height: 280px;
     border-radius: 50%;
-    border: 2px dashed rgba(59, 130, 246, 0.2);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto;
     position: relative;
-    padding: 15px;
 }
-
-.lens-outer-ring::before {
+.lens-outer-ring::after {
     content: ''; position: absolute;
-    width: 104%; height: 104%;
-    border-radius: 50%;
-    border: 1px solid var(--border-line);
+    width: 106%; height: 106%;
+    border-radius: 50%; border: 1px solid var(--border-color);
 }
-
 .lens-iris {
-    width: 100%; height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid var(--bg-surface);
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    width: 88%; height: 88%;
+    border-radius: 50%; overflow: hidden;
+    border: 4px solid var(--bg-surface);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
+.profile-img { width: 100%; height: 100%; object-fit: cover; }
 
-.profile-img {
-    width: 100%; height: 100%; object-fit: cover;
-    filter: grayscale(15%) contrast(105%);
-}
-
-/* Buttons */
+/* Design Base Buttons */
 .btn {
-    padding: 1rem 2rem;
-    font-family: var(--font-header);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.85rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: var(--transition-smooth);
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.95rem 1.75rem; font-family: var(--font-heading);
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;
+    border-radius: 4px; text-decoration: none; font-weight: 500; transition: var(--transition-lens);
 }
+.btn-primary { background: #ffffff; color: #000000; }
+.btn-primary:hover { background: var(--accent-blue); color: #ffffff; transform: translateY(-2px); }
+.btn-secondary { border: 1px solid var(--border-color); color: #ffffff; }
+.btn-secondary:hover { border-color: #ffffff; background: rgba(255,255,255,0.02); transform: translateY(-2px); }
 
-.btn-primary { background: var(--text-primary); color: var(--bg-main); }
-.btn-primary:hover { background: var(--accent-glow); color: var(--text-primary); transform: translateY(-3px); }
-.btn-secondary { border: 1px solid var(--border-line); color: var(--text-primary); }
-.btn-secondary:hover { border-color: var(--text-primary); transform: translateY(-3px); }
+/* Global Section Elements */
+section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
+.section-header { margin-bottom: 3.5rem; text-align: left; }
+.section-tag { font-family: var(--font-heading); font-size: 0.8rem; color: var(--text-muted); letter-spacing: 2px; display: block; margin-bottom: 0.25rem; }
+.section-title { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; }
+.section-line { width: 35px; height: 2px; background: #ffffff; margin-top: 0.5rem; }
+.section-subtitle { margin-top: 1.25rem; color: var(--text-muted); font-size: 1.05rem; max-width: 600px; }
 
-/* Common Structural Styling elements */
-section { padding: 8rem 0; border-bottom: 1px solid var(--border-line); }
-.section-header { margin-bottom: 5rem; }
-.section-tag { font-family: var(--font-header); font-size: 0.8rem; color: var(--text-muted); letter-spacing: 2px; display: block; margin-bottom: 0.5rem; }
-.section-title { font-size: clamp(2rem, 3.5vw, 2.6rem); font-weight: 700; }
-.section-line { width: 40px; height: 2px; background: var(--text-primary); margin-top: 0.75rem; }
-.section-subtitle { margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem; max-width: 600px; }
-
-/* The Framework Capability Deck */
-.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.about-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
-
-.about-capabilities { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+/* Capability block layouts */
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.about-pitch { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; }
+.capabilities-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .cap-pill {
+    background: var(--bg-surface); border: 1px solid var(--border-color);
+    padding: 0.65rem 1.25rem; border-radius: 4px; font-size: 0.9rem; font-weight: 500;
+}
+
+/* ========================================================
+   MOBILE-FIRST FIXED DISPLAY THEATER & APPLE ZOOM WHEEL
+   ======================================================== */
+.lens-theater {
+    width: 100%;
+    max-width: 440px; /* Perfectly locks layouts to look high-end across mobile displays */
+    margin: 0 auto;
     background: var(--bg-surface);
-    border: 1px solid var(--border-line);
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem; font-weight: 500; color: var(--text-primary);
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-/* CAMERA LENS PLAYLIST PLATFORM WORKSHOP */
-.lens-switcher-system {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 4rem;
-    align-items: center;
+/* Viewfinder Structural Frame Box */
+.viewfinder-camera-box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.5rem;
 }
-
-/* Lens Viewfinder Box Structure */
-.viewfinder-wrapper {
+.viewfinder-frame {
     position: relative;
     width: 100%;
-    padding-bottom: 177.78%; /* Perfect fixed 9:16 vertical view windows */
+    padding-bottom: 177.78%; /* Perfect 9:16 Vertical Video Screen Display Frame */
     height: 0;
-    background: #000;
+    background: #000000;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.03);
 }
-
-.video-window {
-    position: absolute;
-    top: 2%; left: 2%; width: 96%; height: 96%;
+.media-viewport {
+    position: absolute; top: 1.5%; left: 1.5%; width: 97%; height: 97%;
+    transition: var(--transition-lens);
 }
+.media-viewport iframe { width: 100%; height: 100%; border: 0; border-radius: 6px; }
 
-.video-window iframe { width: 100%; height: 100%; border: 0; }
-
-/* Viewfinder Overlay Crosshairs */
-.viewfinder-crosshair {
-    position: absolute; width: 12px; height: 12px;
-    border-color: rgba(255,255,255,0.4); border-style: solid; z-index: 10; pointer-events: none;
-}
-.viewfinder-crosshair.tl { top: 15px; left: 15px; border-width: 2px 0 0 2px; }
-.viewfinder-crosshair.tr { top: 15px; right: 15px; border-width: 2px 2px 0 0; }
-.viewfinder-crosshair.bl { bottom: 15px; left: 15px; border-width: 0 0 2px 2px; }
-.viewfinder-crosshair.br { bottom: 15px; right: 15px; border-width: 0 2px 2px 0; }
-
-.rec-dot-indicator {
-    position: absolute; top: 15px; left: 35px; z-index: 10;
-    font-family: var(--font-header); font-size: 0.75rem; font-weight: 600; color: #fff;
-    display: flex; align-items: center; gap: 6px; letter-spacing: 1px;
-}
-.rec-dot-indicator span { width: 8px; height: 8px; background: #ef4444; border-radius: 50%; animation: pulse 1s infinite alternate; }
-@keyframes pulse { to { opacity: 0; } }
-
-/* The Shutter Blinds Animation Mechanism */
-.camera-shutter {
+/* Cinematic Lens System Focus Elements */
+.lens-blur-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: #000000; z-index: 9;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.15s ease-in-out;
+    background: rgba(0,0,0,0.4); backdrop-filter: blur(20px);
+    z-index: 5; pointer-events: none; opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
-.camera-shutter.shut { opacity: 1; }
+.lens-blur-overlay.active-snap { opacity: 1; }
+.media-viewport.lens-zoom-snap { transform: scale(0.96); filter: brightness(0.7); }
 
-/* Right Column Lens Selector Dial Cards */
-.lens-dial-column { display: flex; flex-direction: column; gap: 1.25rem; }
+/* Technical crosshairs decorations */
+.crosshair { position: absolute; width: 10px; height: 10px; border-color: rgba(255,255,255,0.3); border-style: solid; z-index: 4; pointer-events: none; }
+.crosshair.tl { top: 12px; left: 12px; border-width: 1.5px 0 0 1.5px; }
+.crosshair.tr { top: 12px; right: 12px; border-width: 1.5px 1.5px 0 0; }
+.crosshair.bl { bottom: 12px; left: 12px; border-width: 0 0 1.5px 1.5px; }
+.crosshair.br { bottom: 12px; right: 12px; border-width: 0 1.5px 1.5px 0; }
 
-.dial-lens-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-line);
+.rec-indicator {
+    position: absolute; top: 12px; left: 28px; z-index: 4;
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600; color: #fff;
+    display: flex; align-items: center; gap: 5px; letter-spacing: 1px;
+}
+.rec-indicator span { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: blinker 1s infinite alternate; }
+@keyframes blinker { to { opacity: 0; } }
+
+/* APPLE NATIVE SCROLL DIAL CONTAINER LAYOUT */
+.apple-dial-wrapper {
+    position: relative;
+    width: 100%;
+    height: 65px;
+    background: #000000;
     border-radius: 6px;
-    padding: 2rem;
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: 0.2fr 0.8fr;
-    gap: 2rem;
-    align-items: start;
-    transition: var(--transition-smooth);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
 }
 
-.dial-lens-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(17, 17, 26, 0.4);
+.dial-center-marker {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 2px; height: 100%; background: var(--accent-glow); z-index: 10; pointer-events: none;
+    box-shadow: 0 0 8px var(--accent-blue);
 }
 
-.dial-lens-card.active {
-    border-color: var(--text-primary);
-    background: var(--bg-card);
-    transform: scale(1.01);
+.dial-wheel-track {
+    display: flex; align-items: center;
+    height: 100%; width: 100%;
+    overflow-x: scroll; scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Hides default scroll tracks */
+    padding-bottom: 0;
+}
+.dial-wheel-track::-webkit-scrollbar { display: none; }
+
+.dial-tick {
+    min-width: 60px; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+    padding-bottom: 8px; cursor: pointer; flex-shrink: 0;
+    scroll-snap-align: center; transition: var(--transition-lens);
+    user-select: none;
 }
 
-/* Dial Left Indicator specs numbers */
-.lens-spec {
-    display: flex; flex-direction: column; line-height: 1.1;
-    font-family: var(--font-header);
+.tick-line { width: 1px; height: 14px; background: rgba(255,255,255,0.25); transition: var(--transition-lens); }
+.tick-line.main { height: 24px; background: rgba(255,255,255,0.5); }
+
+.tick-label {
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 600;
+    color: var(--text-muted); margin-bottom: 6px; opacity: 0.4; transition: var(--transition-lens);
 }
 
-.focal-length { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); }
-.dial-lens-card.active .focal-length { color: var(--accent-glow); }
-.aperture { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem; }
+/* Dial Active rolling state alterations */
+.dial-tick.active .tick-line.main { background: var(--accent-glow); height: 28px; width: 2px; }
+.dial-tick.active .tick-label { color: var(--text-primary); opacity: 1; font-size: 0.85rem; transform: translateY(-2px); }
+.dial-tick.sub { min-width: 20px; }
+.dial-tick.sub .tick-line { height: 8px; background: rgba(255,255,255,0.15); }
+.dial-tick.spacer { min-width: calc(50% - 30px); cursor: default; pointer-events: none; }
 
-/* Dial details content text rules */
-.lens-category-tag {
-    font-family: var(--font-header); font-size: 0.75rem; font-weight: 600;
-    color: var(--text-muted); letter-spacing: 1.5px; display: block; margin-bottom: 0.5rem;
+/* Text Metadata Box Layout rules */
+.lens-metadata-deck {
+    width: 100%; min-height: 110px; position: relative;
 }
-.dial-lens-card.active .lens-category-tag { color: var(--accent-glow); }
-
-.lens-details h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary); }
-.lens-details p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
-
-/* Clean Strategic Form Panel Section */
-.contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 5rem; }
-.contact-manifesto h3 { font-size: 1.6rem; margin-bottom: 1.5rem; font-weight: 600; }
-.contact-manifesto p { color: var(--text-muted); margin-bottom: 3rem; font-size: 1.05rem; }
-
-.minimal-contact-row { padding: 1.25rem 0; border-top: 1px solid var(--border-line); display: flex; font-size: 0.95rem; }
-.minimal-contact-row .label { width: 100px; font-family: var(--font-header); color: var(--text-muted); font-weight: 500; }
-.minimal-contact-row .value { color: var(--text-primary); text-decoration: none; font-weight: 600; }
-.minimal-contact-row a.value:hover { color: var(--accent-glow); }
-
-/* Form Field Implementations */
-.contact-form-wrapper { background: var(--bg-surface); padding: 2.5rem; border: 1px solid var(--border-line); border-radius: 6px; }
-.form-row-twin { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.input-block { margin-bottom: 1.5rem; }
-.input-block label { display: block; font-family: var(--font-header); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 1px; }
-
-.input-block input, .input-block textarea {
-    width: 100%; padding: 1rem; background: var(--bg-main); border: 1px solid var(--border-line);
-    border-radius: 4px; color: #fff; font-family: var(--font-body); font-size: 0.95rem; transition: var(--transition-smooth);
+.meta-content-card {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; visibility: hidden; transform: translateY(10px);
+    transition: all 0.4s ease-in-out; pointer-events: none;
 }
-.input-block input:focus, .input-block textarea:focus { outline: none; border-color: var(--text-primary); }
-.submit-btn { width: 100%; border: none; cursor: pointer; }
-
-/* Footer Design */
-.footer { background: var(--bg-surface); padding: 3rem 0; font-size: 0.85rem; color: var(--text-muted); }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; }
-.footer-tech-text { font-family: var(--font-header); text-transform: uppercase; letter-spacing: 1px; font-size: 0.75rem; }
-
-/* Toast Notifications */
-.toast-notification {
-    position: fixed; bottom: 2rem; right: 2rem; background: #ffffff; color: #000;
-    font-family: var(--font-header); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
-    padding: 1rem 2rem; border-radius: 4px; letter-spacing: 1px; z-index: 1000;
-    opacity: 0; transform: translateY(20px); transition: var(--transition-smooth); pointer-events: none;
+.meta-content-card.active {
+    opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; position: relative;
 }
-.toast-notification.active { opacity: 1; transform: translateY(0); }
 
-/* Responsive Adjustments Rules */
-@media(max-width: 1024px) {
-    .lens-switcher-system, .about-content, .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-    .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 3.5rem; }
+.meta-style-tag {
+    font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700;
+    color: var(--accent-glow); letter-spacing: 1.5px; display: block; margin-bottom: 0.4rem;
+}
+.meta-content-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; color: #ffffff; }
+.meta-content-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+
+/* Contact Interface Design Framework */
+.contact-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; }
+.contact-brief h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+.contact-brief p { color: var(--text-muted); margin-bottom: 2.5rem; }
+
+.contact-detail-row { padding: 1rem 0; border-top: 1px solid var(--border-color); display: flex; font-size: 0.9rem; }
+.contact-detail-row .tag { width: 130px; font-family: var(--font-heading); color: var(--text-muted); }
+.contact-detail-row .link { color: #ffffff; text-decoration: none; font-weight: 600; }
+.contact-detail-row .link:hover { color: var(--accent-glow); }
+.contact-detail-row .link-text { color: #ffffff; font-weight: 500; }
+
+/* Form Elements Custom fields */
+.contact-form-box { background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2rem; border-radius: 6px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.form-field { margin-bottom: 1.25rem; }
+.form-field label { display: block; font-family: var(--font-heading); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.4rem; letter-spacing: 0.5px; }
+
+.form-field input, .form-field textarea {
+    width: 100%; padding: 0.85rem; background: var(--bg-main); border: 1px solid var(--border-color);
+    border-radius: 4px; color: #ffffff; font-family: var(--font-body); font-size: 0.95rem; transition: var(--transition-lens);
+}
+.form-field input:focus, .form-field textarea:focus { outline: none; border-color: #ffffff; }
+.submit-btn { width: 100%; border: none; cursor: pointer; margin-top: 0.5rem; }
+
+/* Minimalist Structural Footer setup */
+.footer { background: var(--bg-surface); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+
+/* Toast Messages Layout tracking block */
+.toast {
+    position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(40px);
+    background: #ffffff; color: #000000; font-family: var(--font-heading); font-size: 0.85rem;
+    font-weight: 600; padding: 0.9rem 1.75rem; border-radius: 4px; z-index: 1000;
+    opacity: 0; pointer-events: none; transition: var(--transition-lens);
+}
+.toast.active { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* Adaptive Responsive Layout Breakthrough points */
+@media (max-width: 1024px) {
+    .hero-layout, .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-layout { text-align: center; }
     .hero-cta { justify-content: center; }
     .hero-description { margin: 0 auto 2rem; }
     .lens-outer-ring { order: -1; }
-    .viewfinder-wrapper { max-width: 400px; margin: 0 auto; }
 }
 
-@media(max-width: 768px) {
-    .nav-links { display: none; }
-    .form-row-twin { grid-template-columns: 1fr; gap: 0; }
-    .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+@media (max-width: 500px) {
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .lens-theater { padding: 1rem; border: none; background: transparent; }
+    section { padding: 4.5rem 0; }
 }
