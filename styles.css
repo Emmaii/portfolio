@@ -1,4 +1,3 @@
-/* Core Styling Ruleset */
 :root {
     --bg-main: #060608;
     --bg-surface: #0c0c12;
@@ -40,14 +39,12 @@ body {
     padding: 0 1.5rem;
 }
 
-/* Minimal Headings typography */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     font-weight: 700;
     letter-spacing: -0.01em;
 }
 
-/* Hero Section Styles */
 .hero {
     min-height: 100vh;
     padding: 4rem 0;
@@ -93,7 +90,6 @@ h1, h2, h3, h4 {
 
 .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-/* Camera Iris/Lens Element Layout */
 .lens-outer-ring {
     width: 280px; height: 280px;
     border-radius: 50%;
@@ -115,7 +111,6 @@ h1, h2, h3, h4 {
 }
 .profile-img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Design Base Buttons */
 .btn {
     display: inline-flex; align-items: center; justify-content: center;
     padding: 0.95rem 1.75rem; font-family: var(--font-heading);
@@ -127,7 +122,6 @@ h1, h2, h3, h4 {
 .btn-secondary { border: 1px solid var(--border-color); color: #ffffff; }
 .btn-secondary:hover { border-color: #ffffff; background: rgba(255,255,255,0.02); transform: translateY(-2px); }
 
-/* Global Section Elements */
 section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .section-header { margin-bottom: 3.5rem; text-align: left; }
 .section-tag { font-family: var(--font-heading); font-size: 0.8rem; color: var(--text-muted); letter-spacing: 2px; display: block; margin-bottom: 0.25rem; }
@@ -135,7 +129,6 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .section-line { width: 35px; height: 2px; background: #ffffff; margin-top: 0.5rem; }
 .section-subtitle { margin-top: 1.25rem; color: var(--text-muted); font-size: 1.05rem; max-width: 600px; }
 
-/* Capability block layouts */
 .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .about-pitch { font-size: 1.2rem; color: var(--text-muted); line-height: 1.7; }
 .capabilities-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
@@ -145,11 +138,11 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 }
 
 /* ========================================================
-   MOBILE-FIRST FIXED DISPLAY THEATER & APPLE ZOOM WHEEL
+   RE-ENGINEERED PERFECT CENTERING THEATER 
    ======================================================== */
 .lens-theater {
     width: 100%;
-    max-width: 440px; /* Perfectly locks layouts to look high-end across mobile displays */
+    max-width: 440px;
     margin: 0 auto;
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
@@ -158,7 +151,6 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-/* Viewfinder Structural Frame Box */
 .viewfinder-camera-box {
     width: 100%;
     position: relative;
@@ -167,7 +159,7 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .viewfinder-frame {
     position: relative;
     width: 100%;
-    padding-bottom: 177.78%; /* Perfect 9:16 Vertical Video Screen Display Frame */
+    padding-bottom: 177.78%; 
     height: 0;
     background: #000000;
     border-radius: 8px;
@@ -180,7 +172,6 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 }
 .media-viewport iframe { width: 100%; height: 100%; border: 0; border-radius: 6px; }
 
-/* Cinematic Lens System Focus Elements */
 .lens-blur-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.4); backdrop-filter: blur(20px);
@@ -190,7 +181,6 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .lens-blur-overlay.active-snap { opacity: 1; }
 .media-viewport.lens-zoom-snap { transform: scale(0.96); filter: brightness(0.7); }
 
-/* Technical crosshairs decorations */
 .crosshair { position: absolute; width: 10px; height: 10px; border-color: rgba(255,255,255,0.3); border-style: solid; z-index: 4; pointer-events: none; }
 .crosshair.tl { top: 12px; left: 12px; border-width: 1.5px 0 0 1.5px; }
 .crosshair.tr { top: 12px; right: 12px; border-width: 1.5px 1.5px 0 0; }
@@ -205,7 +195,7 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .rec-indicator span { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; animation: blinker 1s infinite alternate; }
 @keyframes blinker { to { opacity: 0; } }
 
-/* APPLE NATIVE SCROLL DIAL CONTAINER LAYOUT */
+/* FIXED APPLE DIAL SNAP TRACK */
 .apple-dial-wrapper {
     position: relative;
     width: 100%;
@@ -227,8 +217,7 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
     display: flex; align-items: center;
     height: 100%; width: 100%;
     overflow-x: scroll; scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Hides default scroll tracks */
-    padding-bottom: 0;
+    scrollbar-width: none;
 }
 .dial-wheel-track::-webkit-scrollbar { display: none; }
 
@@ -240,6 +229,13 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
     user-select: none;
 }
 
+/* Hardened flex layouts to prevent scaling collapses */
+.dial-spacer {
+    min-width: 50%;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
 .tick-line { width: 1px; height: 14px; background: rgba(255,255,255,0.25); transition: var(--transition-lens); }
 .tick-line.main { height: 24px; background: rgba(255,255,255,0.5); }
 
@@ -248,14 +244,11 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
     color: var(--text-muted); margin-bottom: 6px; opacity: 0.4; transition: var(--transition-lens);
 }
 
-/* Dial Active rolling state alterations */
 .dial-tick.active .tick-line.main { background: var(--accent-glow); height: 28px; width: 2px; }
 .dial-tick.active .tick-label { color: var(--text-primary); opacity: 1; font-size: 0.85rem; transform: translateY(-2px); }
 .dial-tick.sub { min-width: 20px; }
 .dial-tick.sub .tick-line { height: 8px; background: rgba(255,255,255,0.15); }
-.dial-tick.spacer { min-width: calc(50% - 30px); cursor: default; pointer-events: none; }
 
-/* Text Metadata Box Layout rules */
 .lens-metadata-deck {
     width: 100%; min-height: 110px; position: relative;
 }
@@ -275,7 +268,6 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .meta-content-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; color: #ffffff; }
 .meta-content-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
 
-/* Contact Interface Design Framework */
 .contact-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; }
 .contact-brief h3 { font-size: 1.5rem; margin-bottom: 1rem; }
 .contact-brief p { color: var(--text-muted); margin-bottom: 2.5rem; }
@@ -286,7 +278,6 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .contact-detail-row .link:hover { color: var(--accent-glow); }
 .contact-detail-row .link-text { color: #ffffff; font-weight: 500; }
 
-/* Form Elements Custom fields */
 .contact-form-box { background: var(--bg-surface); border: 1px solid var(--border-color); padding: 2rem; border-radius: 6px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .form-field { margin-bottom: 1.25rem; }
@@ -299,10 +290,8 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 .form-field input:focus, .form-field textarea:focus { outline: none; border-color: #ffffff; }
 .submit-btn { width: 100%; border: none; cursor: pointer; margin-top: 0.5rem; }
 
-/* Minimalist Structural Footer setup */
 .footer { background: var(--bg-surface); padding: 2.5rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
 
-/* Toast Messages Layout tracking block */
 .toast {
     position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(40px);
     background: #ffffff; color: #000000; font-family: var(--font-heading); font-size: 0.85rem;
@@ -311,7 +300,6 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border-color); }
 }
 .toast.active { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* Adaptive Responsive Layout Breakthrough points */
 @media (max-width: 1024px) {
     .hero-layout, .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
     .hero-layout { text-align: center; }
