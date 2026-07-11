@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(handleTypingSequence, 600);
 
     // ========================================================
-    // APPLE CAMERA APP HORIZONTAL DIAL WHEEL MECHANISM
+    // PREVENTING CONFLICT BETWEEN CLICK AND SCROLL LOGIC
     // ========================================================
     const dialTrack = document.getElementById('dial-wheel');
     const ticks = document.querySelectorAll('.dial-tick[data-video-id]');
@@ -52,11 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const mediaViewport = document.querySelector('.media-viewport');
     const metaCards = document.querySelectorAll('.meta-content-card');
 
-    let clickHoldTimeout;
+    let scrollTimeout;
+    let isProgrammaticScrolling = false; 
 
-    // Center active elements relative to tracking view bounds
     function scrollTickToCenter(targetTick) {
         if (!dialTrack || !targetTick) return;
+        
+        isProgrammaticScrolling = true; 
         
         const trackCenter = dialTrack.offsetWidth / 2;
         const tickCenter = targetTick.offsetLeft + (targetTick.offsetWidth / 2);
@@ -66,6 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
             left: targetScrollLeft,
             behavior: 'smooth'
         });
+
+        // Release lock once programmatic scroll settles
+        setTimeout(() => {
+            isProgrammaticScrolling = false;
+        }, 400);
     }
 
     function switchActiveProject(selectedTick) {
@@ -75,26 +82,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const cardIndex = selectedTick.getAttribute('data-index');
         if (!targetVideoId || !masterIframe) return;
 
-        // Step 1: Manage styling toggle shifts
         ticks.forEach(t => t.classList.remove('active'));
-        selectedTick.classList.add('active');
+        selectedTick.add = selectedTick.classList.add('active');
 
-        // Step 2: Trigger Camera Glass Shutter/Blur Pulse
         if (lensBlurEffect && mediaViewport) {
             lensBlurEffect.classList.add('active-snap');
             mediaViewport.classList.add('lens-zoom-snap');
 
-            // Step 3: Swap video assets during absolute dark/blur peaks
             setTimeout(() => {
-                masterIframe.src = `https://www.youtube.com/embed/${targetVideoId}?autoplay=1&modestbranding=1&rel=0`;
+                masterIframe.src = `https://www.youtube.com/embed/${targetVideoId}?autoplay=1&modestbranding=1&rel=0&enablejsapi=1`;
                 
-                // Step 4: Handle Meta card content visibility state crossfades
                 metaCards.forEach(card => card.classList.remove('active'));
                 const targetedMeta = document.getElementById(`meta-${cardIndex}`);
                 if (targetedMeta) targetedMeta.classList.add('active');
             }, 200);
 
-            // Step 5: Smoothly remove blur overlays to reveal sharp new timeline focus
             setTimeout(() => {
                 lensBlurEffect.classList.remove('active-snap');
                 mediaViewport.classList.remove('lens-zoom-snap');
@@ -102,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Intercept click inputs on explicit focal point ticks
     ticks.forEach(tick => {
         tick.addEventListener('click', function() {
             scrollTickToCenter(this);
@@ -110,13 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Native Rolling Scroll detection framework mechanics
     if (dialTrack) {
         dialTrack.addEventListener('scroll', function() {
-            clearTimeout(clickHoldTimeout);
+            if (isProgrammaticScrolling) return; // Skip logic if triggered via click sequence
+
+            clearTimeout(scrollTimeout);
             
-            // Wait for scroll kinetic momentum vectors to stabilize
-            clickHoldTimeout = setTimeout(() => {
+            scrollTimeout = setTimeout(() => {
                 const trackCenter = dialTrack.scrollLeft + (dialTrack.offsetWidth / 2);
                 let closestTick = null;
                 let minimumDelta = Infinity;
@@ -134,18 +135,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     scrollTickToCenter(closestTick);
                     switchActiveProject(closestTick);
                 }
-            }, 150);
+            }, 100);
         });
     }
 
-    // Initialize layout centering coordinates cleanly at boot
+    // Force layout alignment calculation at script initiation stage
     setTimeout(() => {
         const initialActive = document.querySelector('.dial-tick.active');
         if (initialActive) scrollTickToCenter(initialActive);
-    }, 300);
+    }, 400);
 
     // ========================================================
-    // DIRECT PIPELINE TRANSMISSION CONTACT INTERCEPTS
+    // PIPELINE TRANSMISSION DISPATCH
     // ========================================================
     const applicationForm = document.getElementById('contactForm');
     const toastNotification = document.getElementById('toast');
