@@ -11,7 +11,6 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-layout">
@@ -40,7 +39,6 @@
         </div>
     </section>
 
-    <!-- Capabilities Section -->
     <section class="about">
         <div class="container">
             <div class="section-header">
@@ -64,7 +62,6 @@
         </div>
     </section>
 
-    <!-- Mobile-First Interactive Lens Theater Section -->
     <section class="projects" id="portfolio">
         <div class="container">
             <div class="section-header">
@@ -74,10 +71,7 @@
                 <p class="section-subtitle">Rotate or tap the dial wheel under the screen to adjust the focal edit style parameters on the spot.</p>
             </div>
 
-            <!-- Unified Interactive Lens Deck Layout -->
             <div class="lens-theater">
-                
-                <!-- Viewfinder Display Window (Stays Fixed Above) -->
                 <div class="viewfinder-camera-box">
                     <div class="viewfinder-frame">
                         <div class="crosshair tl"></div>
@@ -86,22 +80,19 @@
                         <div class="crosshair br"></div>
                         <div class="rec-indicator"><span></span>LIVE VIEW</div>
                         
-                        <!-- Internal Camera Lens Glass Effect Elements -->
                         <div class="lens-blur-overlay" id="lens-effect"></div>
                         
                         <div class="media-viewport">
-                            <iframe id="main-viewfinder" src="https://www.youtube.com/embed/i9nx8I50YjQ?modestbranding=1&rel=0" title="Editorial Master Viewport" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe id="main-viewfinder" src="https://www.youtube.com/embed/i9nx8I50YjQ?autoplay=0&modestbranding=1&rel=0&enablejsapi=1" title="Editorial Master Viewport" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
 
-                <!-- Apple-Style Rolling Camera Zoom Wheel Dial -->
                 <div class="apple-dial-wrapper">
                     <div class="dial-center-marker"></div>
                     <div class="dial-wheel-track" id="dial-wheel">
-                        <div class="dial-tick spacer"></div>
+                        <div class="dial-spacer"></div>
                         
-                        <!-- Dial Opt 1 -->
                         <div class="dial-tick active" data-video-id="i9nx8I50YjQ" data-index="0">
                             <span class="tick-label">24mm</span>
                             <div class="tick-line main"></div>
@@ -109,7 +100,6 @@
                         <div class="dial-tick sub"><div class="tick-line"></div></div>
                         <div class="dial-tick sub"><div class="tick-line"></div></div>
                         
-                        <!-- Dial Opt 2 -->
                         <div class="dial-tick" data-video-id="iRNnXom2dEk" data-index="1">
                             <span class="tick-label">50mm</span>
                             <div class="tick-line main"></div>
@@ -117,17 +107,15 @@
                         <div class="dial-tick sub"><div class="tick-line"></div></div>
                         <div class="dial-tick sub"><div class="tick-line"></div></div>
                         
-                        <!-- Dial Opt 3 -->
                         <div class="dial-tick" data-video-id="8ReWsQ3RAvM" data-index="2">
                             <span class="tick-label">85mm</span>
                             <div class="tick-line main"></div>
                         </div>
                         
-                        <div class="dial-tick spacer"></div>
+                        <div class="dial-spacer"></div>
                     </div>
                 </div>
 
-                <!-- Dynamic Metadata Container Box -->
                 <div class="lens-metadata-deck">
                     <div class="meta-content-card active" id="meta-0">
                         <span class="meta-style-tag">HIGH VELOCITY CUTS</span>
@@ -150,7 +138,6 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
@@ -197,14 +184,12 @@
         </div>
     </section>
 
-    <!-- Simple Minimal Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Emmanuel Silas Kelechi. Precision Post-Production System.</p>
         </div>
     </footer>
 
-    <!-- Toast Confirmation Overlay -->
     <div class="toast" id="toast">Pipeline Request Transmitted Successfully.</div>
 
     <script src="script.js"></script>
