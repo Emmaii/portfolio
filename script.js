@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     // ============================================
-    // TYPING ANIMATION (Video Editing Track Mix)
+    // CLEAN RESUME TYPING LOGIC
     // ============================================
     const typedText = document.getElementById('typed-text');
     const words = [
         'Emmanuel Silas Kelechi',
-        'Professional Video Editor',
+        'Video Editor',
         'Visual Storyteller',
         'Post-Production Specialist'
     ];
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let isDeleting = false;
     let typingSpeed = 80; 
     let deletingSpeed = 40; 
-    let pauseDuration = 2200; 
+    let pauseDuration = 2000; 
 
     function type() {
         if (!typedText) return;
@@ -55,7 +55,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
-    // MOBILE MENU SYSTEM
+    // MINIMAL PLAYLIST MIX DECK LOGIC
+    // ============================================
+    const playlistItems = document.querySelectorAll('.playlist-item');
+    const mainVideoPlayer = document.getElementById('main-video-player');
+
+    playlistItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove active classes from all items
+            playlistItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to the selected item
+            this.classList.add('active');
+            
+            // Extract specific ID and dynamically update video frame
+            const videoId = this.getAttribute('data-video-id');
+            if (mainVideoPlayer && videoId) {
+                mainVideoPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            }
+        });
+    });
+
+    // ============================================
+    // RESPONSIVE INTERFACES (Mobile Menu)
     // ============================================
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -84,20 +106,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ============================================
-    // UI CORE TRACKING (Scroll & Form Validation)
-    // ============================================
+    // Back to top scroll validation triggers
     const backToTop = document.querySelector('.back-to-top');
-    
-    function toggleBackToTop() {
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 400) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
-    }
-
-    window.addEventListener('scroll', toggleBackToTop);
+    });
 
     // Form Intercept Handling
     const contactForm = document.getElementById('contactForm');
@@ -106,33 +123,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
             if (toast) {
                 toast.classList.add('show');
-                setTimeout(() => { toast.classList.remove('show'); }, 3500);
+                setTimeout(() => { toast.classList.remove('show'); }, 3000);
             }
             this.reset();
         });
     }
 });
-
-// Dynamic Card Entrance Effects Configuration
-const style = document.createElement('style');
-style.textContent = `
-    .dynamic-card {
-        opacity: 0;
-        transform: translateY(40px);
-        animation: cardFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    .dynamic-card:nth-child(1) { animation-delay: 0.1s; }
-    .dynamic-card:nth-child(2) { animation-delay: 0.25s; }
-    .dynamic-card:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes cardFadeIn {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
