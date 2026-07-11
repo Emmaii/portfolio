@@ -1,131 +1,97 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ============================================
-    // CLEAN RESUME TYPING LOGIC
-    // ============================================
+    // ========================================================
+    // HYPER-CLEAN MONOSPACE NAME PRINT LOGIC
+    // ========================================================
     const typedText = document.getElementById('typed-text');
-    const words = [
+    const positions = [
         'Emmanuel Silas Kelechi',
-        'Video Editor',
-        'Visual Storyteller',
-        'Post-Production Specialist'
+        'Timeline Architect',
+        'Visual Storyteller'
     ];
     
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 80; 
-    let deletingSpeed = 40; 
-    let pauseDuration = 2000; 
-
-    function type() {
+    let arrayIndex = 0;
+    let characterIndex = 0;
+    let isReversing = false;
+    
+    function playTypingEffect() {
         if (!typedText) return;
+        const completeWord = positions[arrayIndex];
         
-        const currentWord = words[wordIndex];
-        
-        if (!isDeleting) {
-            typedText.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
+        if (!isReversing) {
+            typedText.textContent = completeWord.substring(0, characterIndex + 1);
+            characterIndex++;
             
-            if (charIndex === currentWord.length) {
-                setTimeout(() => {
-                    isDeleting = true;
-                    type();
-                }, pauseDuration);
+            if (characterIndex === completeWord.length) {
+                setTimeout(() => { isReversing = true; playTypingEffect(); }, 2500);
                 return;
             }
         } else {
-            typedText.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
+            typedText.textContent = completeWord.substring(0, characterIndex - 1);
+            characterIndex--;
             
-            if (charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(type, 400);
+            if (characterIndex === 0) {
+                isReversing = false;
+                arrayIndex = (arrayIndex + 1) % positions.length;
+                setTimeout(playTypingEffect, 400);
                 return;
             }
         }
-        
-        const speed = isDeleting ? deletingSpeed : typingSpeed;
-        setTimeout(type, speed);
+        setTimeout(playTypingEffect, isReversing ? 35 : 75);
     }
+    
+    setTimeout(playTypingEffect, 600);
 
-    if (typedText) {
-        setTimeout(type, 800);
-    }
+    // ========================================================
+    // INTERACTIVE CAMERA LENS DECK APERTURE SHUTTER FX
+    // ========================================================
+    const dialCards = document.querySelectorAll('.dial-lens-card');
+    const mainViewfinderPlayer = document.getElementById('portfolio-player');
+    const cameraShutterOverlay = document.getElementById('lens-shutter');
 
-    // ============================================
-    // MINIMAL PLAYLIST MIX DECK LOGIC
-    // ============================================
-    const playlistItems = document.querySelectorAll('.playlist-item');
-    const mainVideoPlayer = document.getElementById('main-video-player');
+    dialCards.forEach(card => {
+        card.addEventListener('click', function() {
+            if (this.classList.contains('active')) return;
 
-    playlistItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Remove active classes from all items
-            playlistItems.forEach(i => i.classList.remove('active'));
-            
-            // Add active class to the selected item
+            const targetVideoId = this.getAttribute('data-video-id');
+            if (!targetVideoId || !mainViewfinderPlayer) return;
+
+            // Step 1: Active card highlight swap
+            dialCards.forEach(c => c.classList.remove('active'));
             this.classList.add('active');
-            
-            // Extract specific ID and dynamically update video frame
-            const videoId = this.getAttribute('data-video-id');
-            if (mainVideoPlayer && videoId) {
-                mainVideoPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+
+            // Step 2: Trigger the lens shutter snap animation
+            if (cameraShutterOverlay) {
+                cameraShutterOverlay.classList.add('shut');
+                
+                // Step 3: Swap source frame while shutter is closed (150ms mark)
+                setTimeout(() => {
+                    mainViewfinderPlayer.src = `https://www.youtube.com/embed/${targetVideoId}?autoplay=1&modestbranding=1&rel=0`;
+                }, 150);
+
+                // Step 4: Re-open the aperture lens structure
+                setTimeout(() => {
+                    cameraShutterOverlay.classList.remove('shut');
+                }, 350);
             }
         });
     });
 
-    // ============================================
-    // RESPONSIVE INTERFACES (Mobile Menu)
-    // ============================================
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-    const body = document.body;
-    
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('active');
-            body.classList.toggle('menu-open');
+    // ========================================================
+    // CONTACT DISPATCHER FORMS
+    // ========================================================
+    const inquiryForm = document.getElementById('portfolioContact');
+    const globalToast = document.getElementById('form-toast');
+
+    if (inquiryForm) {
+        inquiryForm.addEventListener('submit', function(event) {
+            event.preventDefault();
             
-            const icon = menuToggle.querySelector('i');
-            if (icon) {
-                icon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
-            }
-        });
-
-        navLinksItems.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                body.classList.remove('menu-open');
-                const icon = menuToggle.querySelector('i');
-                if (icon) icon.className = 'fas fa-bars';
-            });
-        });
-    }
-
-    // Back to top scroll validation triggers
-    const backToTop = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 400) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-
-    // Form Intercept Handling
-    const contactForm = document.getElementById('contactForm');
-    const toast = document.getElementById('toast');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (toast) {
-                toast.classList.add('show');
-                setTimeout(() => { toast.classList.remove('show'); }, 3000);
+            if (globalToast) {
+                globalToast.classList.add('active');
+                setTimeout(() => {
+                    globalToast.classList.remove('active');
+                }, 3500);
             }
             this.reset();
         });
