@@ -2,195 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Emmanuel Silas Kelechi | Editorial Portfolio</title>
-    <meta name="description" content="Cinematic narrative and high-retention video editing framework." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Silas Kelechi — Timeline Architect</title>
+    <!-- Google Fonts for Editorial Tech Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=Syne:wght@700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-layout">
-                <div class="hero-lens-profile">
-                    <div class="lens-outer-ring">
-                        <div class="lens-iris">
-                            <img src="assets/headshot.jpg" alt="Emmanuel Silas Kelechi" class="profile-img">
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-content">
-                    <p class="hero-subtitle">// SYSTEM ONLINE</p>
-                    <h1 class="hero-title">
-                        <span id="typed-text">Emmanuel Silas Kelechi</span>
-                        <span class="cursor">_</span>
-                    </h1>
-                    <p class="hero-description">
-                        I engineer high-fidelity timelines, dynamic pacing mechanics, and clean layout architectures. No fluff—just premium post-production performance built to capture absolute attention.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#portfolio" class="btn btn-primary">Watch Showreel</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Direct</a>
-                    </div>
-                </div>
+    <!-- Camera Viewfinder Overlay Overlay -->
+    <div class="viewfinder-overlay">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+        
+        <div class="meta-top">
+            <div class="rec-status">
+                <span class="rec-dot"></span>
+                <span class="mono">REC [STBY]</span>
             </div>
+            <div class="mono aspect-ratio">16:9 FIZ</div>
         </div>
-    </section>
 
-    <section class="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">01 / DISCIPLINE</span>
-                <h2 class="section-title">The Framework</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-layout">
-                <p class="about-pitch">
-                    True versatility is shown in the edit, not the software. My work switches smoothly across multiple structural spaces—from rapid, retention-driven modern shorts to high-end, clean narrative frameworks.
-                </p>
-                <div class="capabilities-grid">
-                    <div class="cap-pill">Dynamic Continuity</div>
-                    <div class="cap-pill">Spatial Sound Design</div>
-                    <div class="cap-pill">Kinetic Typography</div>
-                    <div class="cap-pill">Advanced Color Workflows</div>
-                    <div class="cap-pill">Multi-Cam Calibration</div>
-                    <div class="cap-pill">Retention Engineering</div>
-                </div>
-            </div>
+        <div class="meta-bottom">
+            <div class="mono fps">60 FPS</div>
+            <div class="mono tc" id="timecode">00:00:00:00</div>
         </div>
-    </section>
+    </div>
 
-    <section class="projects" id="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">02 / CALIBRATION</span>
-                <h2 class="section-title">Lens Showcase</h2>
-                <div class="section-line"></div>
-                <p class="section-subtitle">Rotate or tap the dial wheel under the screen to adjust the focal edit style parameters on the spot.</p>
-            </div>
-
-            <div class="lens-theater">
-                <div class="viewfinder-camera-box">
-                    <div class="viewfinder-frame">
-                        <div class="crosshair tl"></div>
-                        <div class="crosshair tr"></div>
-                        <div class="crosshair bl"></div>
-                        <div class="crosshair br"></div>
-                        <div class="rec-indicator"><span></span>LIVE VIEW</div>
-                        
-                        <div class="lens-blur-overlay" id="lens-effect"></div>
-                        
-                        <div class="media-viewport">
-                            <iframe id="main-viewfinder" src="https://www.youtube.com/embed/i9nx8I50YjQ?autoplay=0&modestbranding=1&rel=0&enablejsapi=1" title="Editorial Master Viewport" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="apple-dial-wrapper">
-                    <div class="dial-center-marker"></div>
-                    <div class="dial-wheel-track" id="dial-wheel">
-                        <div class="dial-spacer"></div>
-                        
-                        <div class="dial-tick active" data-video-id="i9nx8I50YjQ" data-index="0">
-                            <span class="tick-label">24mm</span>
-                            <div class="tick-line main"></div>
-                        </div>
-                        <div class="dial-tick sub"><div class="tick-line"></div></div>
-                        <div class="dial-tick sub"><div class="tick-line"></div></div>
-                        
-                        <div class="dial-tick" data-video-id="iRNnXom2dEk" data-index="1">
-                            <span class="tick-label">50mm</span>
-                            <div class="tick-line main"></div>
-                        </div>
-                        <div class="dial-tick sub"><div class="tick-line"></div></div>
-                        <div class="dial-tick sub"><div class="tick-line"></div></div>
-                        
-                        <div class="dial-tick" data-video-id="8ReWsQ3RAvM" data-index="2">
-                            <span class="tick-label">85mm</span>
-                            <div class="tick-line main"></div>
-                        </div>
-                        
-                        <div class="dial-spacer"></div>
-                    </div>
-                </div>
-
-                <div class="lens-metadata-deck">
-                    <div class="meta-content-card active" id="meta-0">
-                        <span class="meta-style-tag">HIGH VELOCITY CUTS</span>
-                        <h3>Dynamic Sound & Retention Continuity</h3>
-                        <p>High-energy visual pacing using rapid, clean split-second hooks, spatial audio layers, and complex frame tracking built to capture attention immediately.</p>
-                    </div>
-                    <div class="meta-content-card" id="meta-1">
-                        <span class="meta-style-tag">KINETIC KNOWLEDGE</span>
-                        <h3>Synchronized Typography & Visual Flow</h3>
-                        <p>Clean on-screen text integration, deliberate color balance, and smooth pacing parameters engineered to communicate complex info clearly.</p>
-                    </div>
-                    <div class="meta-content-card" id="meta-2">
-                        <span class="meta-style-tag">PREMIUM CINEMA</span>
-                        <h3>Cinematic Micro-Narrative Editing</h3>
-                        <p>Rich pacing layouts and cinematic color workflows optimized to make short-form vertical assets carry deep authority.</p>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Header Navigation -->
+    <header class="editorial-header">
+        <div class="brand">
+            <h1>EMMANUEL SILAS KELECHI</h1>
+            <p class="subtitle">PRECISION POST-PRODUCTION SYSTEM</p>
         </div>
-    </section>
+        <nav class="contact-trigger">
+            <a href="mailto:emmaabusinesss@gmail.com" class="cta-link">SECURE COMMS →</a>
+        </nav>
+    </header>
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">03 / ACQUIRE</span>
-                <h2 class="section-title">Initiate Production</h2>
-                <div class="section-line"></div>
-            </div>
-            
-            <div class="contact-layout">
-                <div class="contact-brief">
-                    <h3>Secure editing capacity for your timeline.</h3>
-                    <p>Let's design a specialized visual framework optimized for your specific targets. Reach out directly below.</p>
-                    
-                    <div class="contact-detail-row">
-                        <span class="tag">SECURE COMMS //</span>
-                        <a href="mailto:emmaabusinesss@gmail.com" class="link">emmaabusinesss@gmail.com</a>
-                    </div>
-                    <div class="contact-detail-row">
-                        <span class="tag">LOCATION //</span>
-                        <span class="link-text">Lagos, Nigeria (Worldwide Remote Sync)</span>
-                    </div>
+    <!-- Main Content Presentation Stage -->
+    <main class="presentation-stage">
+        <section class="project-showcase" id="projectShowcase">
+            <div class="project-card active" data-index="0">
+                <div class="media-container">
+                    <div class="placeholder-glitch"></div>
+                    <!-- Future embed: <video src="path-to-video.mp4" autoplay loop muted></video> -->
                 </div>
-                
-                <div class="contact-form-box">
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-field">
-                                <label>IDENTIFIER / NAME</label>
-                                <input type="text" id="name" required placeholder="Recruiter Name">
-                            </div>
-                            <div class="form-field">
-                                <label>DIGITAL MAIL / EMAIL</label>
-                                <input type="email" id="email" required placeholder="name@company.com">
-                            </div>
-                        </div>
-                        <div class="form-field">
-                            <label>PROJECT BRIEF & SCOPE</label>
-                            <textarea id="message" rows="4" placeholder="Outline your raw footage parameters, expectations, and desired delivery schedule..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary submit-btn">Transmit Request</button>
-                    </form>
+                <div class="project-details">
+                    <span class="project-num mono">// 01</span>
+                    <h2 class="project-title">RETENTION ARCHITECTURE</h2>
+                    <p class="project-desc">High-fidelity pacing optimizations engineered for maximized attention spans and editorial pacing velocity.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Emmanuel Silas Kelechi. Precision Post-Production System.</p>
+            <div class="project-card" data-index="1">
+                <div class="media-container">
+                    <div class="placeholder-glitch secondary"></div>
+                </div>
+                <div class="project-details">
+                    <span class="project-num mono">// 02</span>
+                    <h2 class="project-title">NARRATIVE SYNCHRONICITY</h2>
+                    <p class="project-desc">Advanced multi-cam sequence alignments and thematic soundscapes built to anchor deep retention.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-index="2">
+                <div class="media-container">
+                    <div class="placeholder-glitch tertiary"></div>
+                </div>
+                <div class="project-details">
+                    <span class="project-num mono">// 03</span>
+                    <h2 class="project-title">CHROME CHROMATICITY</h2>
+                    <p class="project-desc">Mathematical color matching, gamut mappings, and visual grading calibrated for continuous digital distribution.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Apple-Style Precision Control Dial Navigation -->
+    <footer class="dial-navigation-container">
+        <div class="dial-label mono">SELECT TIMELINE SEGMENT</div>
+        <div class="dial-wrapper">
+            <div class="dial-center-indicator"></div>
+            <div class="dial-track" id="dialTrack">
+                <!-- Ticks are dynamically generated or hardcoded for layout reliability -->
+                <div class="dial-tick active" data-target="0"><span class="tick-num">01</span></div>
+                <div class="dial-tick" data-target="1"><span class="tick-num">02</span></div>
+                <div class="dial-tick" data-target="2"><span class="tick-num">03</span></div>
+            </div>
         </div>
     </footer>
-
-    <div class="toast" id="toast">Pipeline Request Transmitted Successfully.</div>
 
     <script src="script.js"></script>
 </body>
