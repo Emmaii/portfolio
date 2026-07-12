@@ -1,167 +1,75 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // ========================================================
-    // IDENTITY TYPING LOGIC ENGINE
-    // ========================================================
-    const typedText = document.getElementById('typed-text');
-    const roles = [
-        'Emmanuel Silas Kelechi',
-        'Timeline Architect',
-        'Visual Storyteller'
-    ];
-    
-    let roleIdx = 0;
-    let charIdx = 0;
-    let isReversing = false;
-    
-    function handleTypingSequence() {
-        if (!typedText) return;
-        const currentString = roles[roleIdx];
+document.addEventListener('DOMContentLoaded', () => {
+    const dialTrack = document.getElementById('dialTrack');
+    const ticks = document.querySelectorAll('.dial-tick');
+    const projects = document.querySelectorAll('.project-card');
+    const timecodeEl = document.getElementById('timecode');
+
+    let activeIndex = 0;
+    const tickGap = 68; // Based on elements metrics styling (width + layout gap)
+
+    // 1. Dynamic System Real-time Timecode Generator (HH:MM:SS:FF)
+    function updateTimecode() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
         
-        if (!isReversing) {
-            typedText.textContent = currentString.substring(0, charIdx + 1);
-            charIdx++;
-            
-            if (charIdx === currentString.length) {
-                setTimeout(() => { isReversing = true; handleTypingSequence(); }, 2200);
-                return;
-            }
-        } else {
-            typedText.textContent = currentString.substring(0, charIdx - 1);
-            charIdx--;
-            
-            if (charIdx === 0) {
-                isReversing = false;
-                roleIdx = (roleIdx + 1) % roles.length;
-                setTimeout(handleTypingSequence, 400);
-                return;
-            }
-        }
-        setTimeout(handleTypingSequence, isReversing ? 30 : 70);
+        // Calculate artificial frame sequences matching 60 FPS profile limits
+        const milliseconds = now.getMilliseconds();
+        const frames = String(Math.floor((milliseconds / 1000) * 60)).padStart(2, '0');
+
+        timecodeEl.textContent = `${hours}:${minutes}:${seconds}:${frames}`;
+        requestAnimationFrame(updateTimecode);
     }
-    
-    setTimeout(handleTypingSequence, 600);
+    requestAnimationFrame(updateTimecode);
 
-    // ========================================================
-    // PREVENTING CONFLICT BETWEEN CLICK AND SCROLL LOGIC
-    // ========================================================
-    const dialTrack = document.getElementById('dial-wheel');
-    const ticks = document.querySelectorAll('.dial-tick[data-video-id]');
-    const masterIframe = document.getElementById('main-viewfinder');
-    const lensBlurEffect = document.getElementById('lens-effect');
-    const mediaViewport = document.querySelector('.media-viewport');
-    const metaCards = document.querySelectorAll('.meta-content-card');
+    // 2. Timeline Sequence Navigation Switching Controller
+    function switchActiveProject(index) {
+        if (index < 0 || index >= projects.length) return;
+        activeIndex = index;
 
-    let scrollTimeout;
-    let isProgrammaticScrolling = false; 
+        // Reset and update project cards visibility bounds
+        projects.forEach(card => card.classList.remove('active'));
+        projects[activeIndex].classList.add('active');
 
-    function scrollTickToCenter(targetTick) {
-        if (!dialTrack || !targetTick) return;
-        
-        isProgrammaticScrolling = true; 
-        
-        const trackCenter = dialTrack.offsetWidth / 2;
-        const tickCenter = targetTick.offsetLeft + (targetTick.offsetWidth / 2);
-        const targetScrollLeft = tickCenter - trackCenter;
+        // Center selected item inside the apple-style track selector bounds
+        const offset = -activeIndex * tickGap;
+        dialTrack.style.transform = `translateX(${offset}px)`;
 
-        dialTrack.scrollTo({
-            left: targetScrollLeft,
-            behavior: 'smooth'
-        });
-
-        // Release lock once programmatic scroll settles
-        setTimeout(() => {
-            isProgrammaticScrolling = false;
-        }, 400);
-    }
-
-    function switchActiveProject(selectedTick) {
-        if (selectedTick.classList.contains('active')) return;
-
-        const targetVideoId = selectedTick.getAttribute('data-video-id');
-        const cardIndex = selectedTick.getAttribute('data-index');
-        if (!targetVideoId || !masterIframe) return;
-
+        // Update active class properties across specific timeline ticks
         ticks.forEach(t => t.classList.remove('active'));
-        selectedTick.add = selectedTick.classList.add('active');
-
-        if (lensBlurEffect && mediaViewport) {
-            lensBlurEffect.classList.add('active-snap');
-            mediaViewport.classList.add('lens-zoom-snap');
-
-            setTimeout(() => {
-                masterIframe.src = `https://www.youtube.com/embed/${targetVideoId}?autoplay=1&modestbranding=1&rel=0&enablejsapi=1`;
-                
-                metaCards.forEach(card => card.classList.remove('active'));
-                const targetedMeta = document.getElementById(`meta-${cardIndex}`);
-                if (targetedMeta) targetedMeta.classList.add('active');
-            }, 200);
-
-            setTimeout(() => {
-                lensBlurEffect.classList.remove('active-snap');
-                mediaViewport.classList.remove('lens-zoom-snap');
-            }, 550);
+        
+        const selectedTick = ticks[activeIndex];
+        if (selectedTick) {
+            selectedTick.classList.add('active'); // Fixed assignment bug safely
         }
     }
 
-    ticks.forEach(tick => {
-        tick.addEventListener('click', function() {
-            scrollTickToCenter(this);
-            switchActiveProject(this);
+    // 3. Attach Interaction Callbacks to Tick Interfaces
+    ticks.forEach((tick, i) => {
+        tick.addEventListener('click', () => {
+            switchActiveProject(i);
         });
     });
 
-    if (dialTrack) {
-        dialTrack.addEventListener('scroll', function() {
-            if (isProgrammaticScrolling) return; // Skip logic if triggered via click sequence
-
-            clearTimeout(scrollTimeout);
-            
-            scrollTimeout = setTimeout(() => {
-                const trackCenter = dialTrack.scrollLeft + (dialTrack.offsetWidth / 2);
-                let closestTick = null;
-                let minimumDelta = Infinity;
-
-                ticks.forEach(tick => {
-                    const tickCenter = tick.offsetLeft + (tick.offsetWidth / 2);
-                    const delta = Math.abs(tickCenter - trackCenter);
-                    if (delta < minimumDelta) {
-                        minimumDelta = delta;
-                        closestTick = tick;
-                    }
-                });
-
-                if (closestTick && !closestTick.classList.contains('active')) {
-                    scrollTickToCenter(closestTick);
-                    switchActiveProject(closestTick);
+    // 4. Capture Standard Trackpad/Mousewheel Scrolling Signals
+    let scrollTimeout;
+    window.addEventListener('wheel', (e) => {
+        clearTimeout(scrollTimeout);
+        
+        // Use debounce tracking architecture to prevent erratic step skips
+        scrollTimeout = setTimeout(() => {
+            if (e.deltaY > 30) {
+                // Scroll down or forward sequence boundary checking
+                if (activeIndex < projects.length - 1) {
+                    switchActiveProject(activeIndex + 1);
                 }
-            }, 100);
-        });
-    }
-
-    // Force layout alignment calculation at script initiation stage
-    setTimeout(() => {
-        const initialActive = document.querySelector('.dial-tick.active');
-        if (initialActive) scrollTickToCenter(initialActive);
-    }, 400);
-
-    // ========================================================
-    // PIPELINE TRANSMISSION DISPATCH
-    // ========================================================
-    const applicationForm = document.getElementById('contactForm');
-    const toastNotification = document.getElementById('toast');
-
-    if (applicationForm) {
-        applicationForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            if (toastNotification) {
-                toastNotification.classList.add('active');
-                setTimeout(() => {
-                    toastNotification.classList.remove('active');
-                }, 3500);
+            } else if (e.deltaY < -30) {
+                // Scroll up or reverse timeline alignment pathing
+                if (activeIndex > 0) {
+                    switchActiveProject(activeIndex - 1);
+                }
             }
-            this.reset();
-        });
-    }
+        }, 50);
+    });
 });
