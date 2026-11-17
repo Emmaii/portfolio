@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Typing effect
   const el = document.getElementById('typed');
-  const words = ['apps people love', 'fast, clean products', 'real-world solutions'];
+  const words = ['real products', 'live apps', 'ideas that launch'];
   let w = 0, c = 0, del = false;
   function type() {
     const word = words[w];
